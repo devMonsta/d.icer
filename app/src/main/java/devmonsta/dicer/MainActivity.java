@@ -4,6 +4,9 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.NumberPicker;
+import android.widget.TextView;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -12,6 +15,20 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        NumberPicker np1 = (NumberPicker) findViewById(R.id.numberPicker);
+        np1.setMaxValue(100);
+        np1.setMinValue(0);
+
+    }
+
+    public void RollTheDice(View v)
+    {
+        NumberPicker np1 = (NumberPicker) findViewById(R.id.numberPicker);
+        TextView tv = (TextView) findViewById(R.id.textView);
+
+        tv.setText(np1.getValue() + "");
+
     }
 
 
